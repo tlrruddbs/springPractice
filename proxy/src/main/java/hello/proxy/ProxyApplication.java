@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 
 @Import(ConcreteProxyConfig.class)
-@SpringBootApplication(scanBasePackages = "hello.proxy.app")
+@SpringBootApplication(scanBasePackages = "hello.proxy.app.config.v1_proxy")
 public class ProxyApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProxyApplication.class, args);
