@@ -7,9 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AopApplication {
 
 	public static void main(String[] args) {
-		System.out.println("dd");
 		SpringApplication.run(AopApplication.class, args);
-
 	}
 
 }
