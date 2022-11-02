@@ -97,6 +97,7 @@ public class BatchConfig {
                 //market.setPrice(market.getPrice()+10000);
                 return market;
                 
+                
             }
         };
     }
