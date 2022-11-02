@@ -98,6 +98,7 @@ public class BatchConfig {
                 return market;
                 
             }
+            
         };
     }
 
