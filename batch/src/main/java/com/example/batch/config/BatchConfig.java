@@ -96,6 +96,7 @@ public class BatchConfig {
                 //100원 추가
                 //market.setPrice(market.getPrice()+10000);
                 return market;
+                
             }
         };
     }
