@@ -1,0 +1,22 @@
+pipeline {
+    environment { 
+        registry = 'tlrruddbs/spring-batch'
+        //registryUrl = 'https://registry.hub.docker.com/repository/docker/simjinwoo/guidancemanager'
+        registryUrl = 'https://registry.hub.docker.com/repository/docker/tlrruddbs/spring-batch'
+        //registryCredential = 'tlrruddbs'
+        dockerImageTagBackend = "${registry}:spring-batch"
+        dockerContainerNameBackend = 'spring-batch'
+    }
+
+    agent any
+
+    stages {
+        stage('Show parameters') {
+            steps {
+                echo "Show parameters Stage"
+                echo "BRANCH_NAME: ${BRANCH_NAME}"
+                //echo "WORKSPACE: ${WORKSPACE}"
+            }
+        }
+    }
+}
