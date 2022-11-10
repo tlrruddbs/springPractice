@@ -14,6 +14,10 @@ import java.util.List;
 public class MarketController {
     private final MarketService marketService;
 
+    @GetMapping("ks")
+    public String ks() throws Exception{
+        return "success!!";
+    }
     @GetMapping("test")
     public String test() throws Exception{
 
