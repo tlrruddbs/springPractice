@@ -16,18 +16,17 @@ pipeline {
                 echo "Show parameters Stage"
                 echo "BRANCH_NAME: ${BRANCH_NAME}"
                 echo "WORKSPACE: ${WORKSPACE}"
+                echo "GIT_BRANCH_LOCAL: "
             }
         }
 
         stage('Backend Build Stage') {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
-                GIT_BRANCH_LOCAL = sh (
-                        script: "echo $Branch | sed -e 's|origin/||g'",
-                        returnStdout: true
-                    ).trim()
-                echo "WORKSPACE: ${WORKSPACE}"
-                sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl} '
+                sh "echo GIT_BRANCH_LOCAL=\\\"$BRANCH_NAME\\\" | sed -e 's|origin/||g' | tee version.properties"
+
+                echo "WORKSPACE: ${GIT_BRANCH_LOCAL}"
+                sh 'git clone -b ${BRANCH_NAME} ${registryUrl} '
 
             }
         }
