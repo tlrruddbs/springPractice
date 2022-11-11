@@ -23,9 +23,11 @@ pipeline {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
                 echo "WORKSPACE: ${WORKSPACE}"
-                sh 'cd ..'
-                echo "WORKSPACE: ${WORKSPACE}"
-                sh 'git clone -b ${BRANCH_NAME} ${registryUrl}'
+                sh 'git clone -b ${BRANCH_NAME} ${registryUrl} for branch in `git branch -r | grep -v tags`; do
+                                                                   new_branch=$(echo $branch | sed 's/origin\///')
+                                                                   git branch $branch $branch
+                                                                   git branch -m $branch $new_branch
+                                                               done'
 
             }
         }
