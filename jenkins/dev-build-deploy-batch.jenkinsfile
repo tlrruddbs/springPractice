@@ -2,7 +2,7 @@ pipeline {
     environment { 
         registry = 'tlrruddbs/spring-batch'
         //registryUrl = 'https://registry.hub.docker.com/repository/docker/simjinwoo/guidancemanager'
-        registryUrl = 'https://registry.hub.docker.com/repository/docker/tlrruddbs/spring-batch'
+        registryUrl = 'https://github.com/tlrruddbs/springPractice'
         //registryCredential = 'tlrruddbs'
         dockerImageTagBackend = "${registry}:spring-batch"
         dockerContainerNameBackend = 'spring-batch'
@@ -15,8 +15,19 @@ pipeline {
             steps {
                 echo "Show parameters Stage"
                 echo "BRANCH_NAME: ${BRANCH_NAME}"
-                //echo "WORKSPACE: ${WORKSPACE}"
+                echo "WORKSPACE: ${WORKSPACE}"
             }
         }
+
+        stage('Backend Build Stage') {
+            steps {
+                echo '--------------------------------------------- setting ---------------------------------------------'
+                sh 'cd ..'
+                echo "WORKSPACE: ${WORKSPACE}"
+                sh 'git clone -b ${BRANCH_NAME} ${registryUrl}'
+
+            }
+        }
+
     }
 }
