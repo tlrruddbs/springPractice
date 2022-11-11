@@ -8,7 +8,7 @@ pipeline {
         dockerContainerNameBackend = 'spring-batch'
 
         GIT_BRANCH_LOCAL = sh (
-                                script: "echo $Branch | sed -e 's|origin/||g'",
+                                script: "echo ${BRANCH_NAME} | sed -e 's|origin/||g'",
                                 returnStdout: true
                             ).trim()
     }
