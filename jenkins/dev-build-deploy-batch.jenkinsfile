@@ -28,6 +28,9 @@ pipeline {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
 
+                sh "sudo rm /var/lib/apt/lists/lock"
+                sh "sudo rm /var/cache/apt/archives/lock"
+                sh "sudo rm /var/lib/dpkg/lock*"
                 sh "apt-get install -y sudo"
                 sh "sudo git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}"
             }
