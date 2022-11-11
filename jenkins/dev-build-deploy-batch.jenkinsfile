@@ -16,7 +16,6 @@ pipeline {
                 echo "Show parameters Stage"
                 echo "BRANCH_NAME: ${BRANCH_NAME}"
                 echo "WORKSPACE: ${WORKSPACE}"
-                echo "GIT_BRANCH_LOCAL: "
             }
         }
 
@@ -27,8 +26,6 @@ pipeline {
 
                 echo "branch name =  ${GIT_BRANCH_LOCAL}:
 
-                echo "WORKSPACE: ${GIT_BRANCH_LOCAL}"
-                sh 'git clone -b ${BRANCH_NAME} ${registryUrl} '
 
             }
         }
