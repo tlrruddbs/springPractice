@@ -28,7 +28,7 @@ pipeline {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
 
-                sh "git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}"
+                sh "sudo git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}"
             }
         }
 
