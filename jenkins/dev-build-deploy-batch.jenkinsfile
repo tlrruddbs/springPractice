@@ -14,7 +14,7 @@ pipeline {
         stage('Show parameters') {
             steps {
                 echo "Show parameters Stage"
-                echo "BRANCH_NAME: ${BRANCH_NAME}"
+                echo "BRANCH_NAME: ${BRANCH_NAME##origin/}"
                 echo "WORKSPACE: ${WORKSPACE}"
             }
         }
@@ -23,11 +23,7 @@ pipeline {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
                 echo "WORKSPACE: ${WORKSPACE}"
-                sh 'git clone -b ${BRANCH_NAME} ${registryUrl} for branch in `git branch -r | grep -v tags`; do
-                                                                   new_branch=$(echo $branch | sed 's/origin\///')
-                                                                   git branch $branch $branch
-                                                                   git branch -m $branch $new_branch
-                                                               done'
+                sh 'git clone -b ${BRANCH_NAME##origin/} ${registryUrl} '
 
             }
         }
