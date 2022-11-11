@@ -22,8 +22,12 @@ pipeline {
         stage('Backend Build Stage') {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
+                GIT_BRANCH_LOCAL = sh (
+                        script: "echo $Branch | sed -e 's|origin/||g'",
+                        returnStdout: true
+                    ).trim()
                 echo "WORKSPACE: ${WORKSPACE}"
-                sh 'git clone -b ${BRANCH_NAME} ${registryUrl} '
+                sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl} '
 
             }
         }
