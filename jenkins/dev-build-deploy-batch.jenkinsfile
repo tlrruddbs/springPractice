@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
                 sh 'cd ..'
-                sh 'sudo git clone -b ${BRANCH_NAME} ${registryUrl}'
+                sh 'git clone -b ${BRANCH_NAME} ${registryUrl}'
 
             }
         }
