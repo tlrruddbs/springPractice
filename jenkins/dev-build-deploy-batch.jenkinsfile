@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo "Show parameters Stage"
                 echo "BRANCH_NAME: ${BRANCH_NAME}"
-                //echo "WORKSPACE: ${WORKSPACE}"
+                echo "WORKSPACE: ${WORKSPACE}"
             }
         }
     }
