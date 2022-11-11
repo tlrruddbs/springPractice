@@ -22,6 +22,7 @@ pipeline {
         stage('Backend Build Stage') {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
+                echo "WORKSPACE: ${WORKSPACE}"
                 sh 'cd ..'
                 echo "WORKSPACE: ${WORKSPACE}"
                 sh 'git clone -b ${BRANCH_NAME} ${registryUrl}'
