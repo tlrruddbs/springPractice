@@ -6,6 +6,11 @@ pipeline {
         //registryCredential = 'tlrruddbs'
         dockerImageTagBackend = "${registry}:spring-batch"
         dockerContainerNameBackend = 'spring-batch'
+
+        GIT_BRANCH_LOCAL = sh (
+                                script: "echo $Branch | sed -e 's|origin/||g'",
+                                returnStdout: true
+                            ).trim()
     }
 
     agent any
@@ -22,10 +27,9 @@ pipeline {
         stage('Backend Build Stage') {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
-                sh "echo GIT_BRANCH_LOCAL=\\\"$BRANCH_NAME\\\" | sed -e 's|origin/||g' | tee version.properties"
 
-                echo "--------------"
-                sh "echo \\\"$BRANCH_NAME\\\" | sed -e 's|origin/||g"
+                echo "Git branch: ${GIT_BRANCH_LOCAL}"
+
 
             }
         }
