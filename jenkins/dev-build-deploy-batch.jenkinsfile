@@ -24,7 +24,8 @@ pipeline {
                 echo '--------------------------------------------- setting ---------------------------------------------'
                 sh "echo GIT_BRANCH_LOCAL=\\\"$BRANCH_NAME\\\" | sed -e 's|origin/||g' | tee version.properties"
 
-
+                echo "--------------"
+                echo "${BRANCH_NAME}"
 
             }
         }
