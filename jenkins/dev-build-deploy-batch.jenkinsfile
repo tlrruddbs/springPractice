@@ -32,8 +32,8 @@ pipeline {
                 dir("batch"){
                     sh 'pwd'
                     sh 'ls -al'
-                    sh 'chmod 555 ./gradle'
-                    sh "./gradle clean build"
+                    sh 'chmod 555 ./gradlew'
+                    sh "./gradlew clean build"
                 }
 //                 sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
             }
