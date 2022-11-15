@@ -32,7 +32,7 @@ pipeline {
                 dir("batch"){
                     sh 'pwd'
                     sh 'ls -al'
-                    sh 'rm -f springPractice'
+                    sh 'rm -r springPractice'
                     sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
                     dir("springPractice"){
                         sh 'chmod 555 ./gradlew'
