@@ -30,7 +30,6 @@ pipeline {
                 sh 'pwd'
                 sh 'ls -al'
                 dir("batch"){
-                    sh 'apt install docker'
                     sh 'pwd'
                     sh 'ls -al'
                     sh 'chmod 555 ./gradlew'
