@@ -32,7 +32,7 @@ pipeline {
                 sh 'cd ..'
                 sh 'pwd'
                 sh 'rm -f spring-batch'
-                sh. ls -al'
+                sh 'ls -al'
 //                 sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
             }
         }
