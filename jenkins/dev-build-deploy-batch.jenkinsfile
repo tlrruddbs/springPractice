@@ -41,6 +41,10 @@ pipeline {
                             sh "./gradlew clean build"
                             sh "docker build -t tlrruddbs/spring-batch:0.0.1 ."
                             sh 'docker run -d -p 8000:8000 -e "SPRING_PROFILES_ACTIVE=dev" --name spring-batch tlrruddbs/spring-batch:0.0.1'
+                            dir("build"){
+                                dir("lib"){
+                                }
+                            }
                         }
                     }
                 }
