@@ -29,8 +29,11 @@ pipeline {
                 echo '--------------------------------------------- setting ---------------------------------------------'
                 sh 'pwd'
                 sh 'ls -al'
-
-                sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
+                sh 'cd ..'
+                sh 'pwd'
+                sh 'rm -f spring-batch'
+                sh. ls -al'
+//                 sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
             }
         }
 
