@@ -27,12 +27,9 @@ pipeline {
         stage('Backend Build Stage') {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
-                sh 'pwd'
-                sh 'ls -al'
-                dir("workspace/")
-                sh 'pwd'
-                sh 'rm -f spring-batch'
-                sh 'ls -al'
+                dir("batch")
+                sh "./gradle clean build"
+                
 //                 sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
             }
         }
