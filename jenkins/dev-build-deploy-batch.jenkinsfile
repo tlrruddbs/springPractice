@@ -27,7 +27,6 @@ pipeline {
         stage('Backend Build Stage') {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
-                echo "WORKSPACE: ${WORKSPACE}"
                 sh 'pwd'
                 sh 'ls -al'
 
