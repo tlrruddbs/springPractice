@@ -27,7 +27,7 @@ pipeline {
         stage('Backend Build Stage') {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
-                dir('/home/ec2-user')
+                dir('ec2-user')
                 echo "WORKSPACE: ${WORKSPACE}"
 
                 sh "git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}"
