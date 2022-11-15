@@ -36,6 +36,7 @@ pipeline {
                     sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
                     dir("springPractice"){
                         dir("batch"){
+                            sh 'pwd'
                             sh 'chmod 555 ./gradlew'
                             sh "./gradlew clean build"
                             sh "docker build -t tlrruddbs/spring-batch:0.0.1 ."
