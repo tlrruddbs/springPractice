@@ -28,7 +28,6 @@ pipeline {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
 
-                sh "apt install sudo"
                 sh "sudo git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}"
             }
         }
