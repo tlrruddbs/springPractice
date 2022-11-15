@@ -28,6 +28,8 @@ pipeline {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
                 echo "WORKSPACE: ${WORKSPACE}"
+                echo "pwd"
+                sh "ls -al"
 
                 sh "git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}"
             }
