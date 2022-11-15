@@ -27,11 +27,15 @@ pipeline {
         stage('Backend Build Stage') {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
+                script {
+                    String currentDirectory = pwd();
+                    bat pwd
+                }
                 echo "WORKSPACE: ${WORKSPACE}"
-                echo "pwd"
-                sh "ls -al"
+                sh 'pwd'
+                sh 'ls -al'
 
-                sh "git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}"
+                sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
             }
         }
 
