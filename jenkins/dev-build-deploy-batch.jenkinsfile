@@ -29,7 +29,7 @@ pipeline {
                 echo '--------------------------------------------- setting ---------------------------------------------'
                 sh 'pwd'
                 sh 'ls -al'
-                sh 'cd ..'
+                dir("workspace/")
                 sh 'pwd'
                 sh 'rm -f spring-batch'
                 sh 'ls -al'
