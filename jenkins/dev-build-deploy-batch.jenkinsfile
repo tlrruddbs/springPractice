@@ -73,17 +73,15 @@ pipeline {
 //                     failure {
 //                         sh 'echo "Fail Cloned Repository"'
 //                     }
-                    sh 'cd springPractice/batch'
-                            sh 'pwd'
-                            sh 'chmod 555 ./gradlew'
-                            sh "./gradlew clean build"
-                            script {
-                                backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/*.jar .")
-                                docker.withRegistry('', registryCredential){
-                                     backendImage.push()
-                                }
-                                backendImage.run("-p 8000:8000 -v /var/log/spring-batch:/logs -e \"SPRING_PROFILES_ACTIVE=dev\"  --name ${dockerContainerNameBackend}")
-                            }
+                    sh 'chmod 555 ./gradlew'
+                    sh "./gradlew clean build"
+                    script {
+                        backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/*.jar .")
+                        docker.withRegistry('', registryCredential){
+                             backendImage.push()
+                        }
+                        backendImage.run("-p 8000:8000 -v /var/log/spring-batch:/logs -e \"SPRING_PROFILES_ACTIVE=dev\"  --name ${dockerContainerNameBackend}")
+                    }
 //                             sh "docker build -t tlrruddbs/spring-batch:0.0.1 ."
 //                             sh 'docker run -d -p 8000:8000 -e "SPRING_PROFILES_ACTIVE=dev" --name spring-batch tlrruddbs/spring-batch:0.0.1'
 //                             dir("build"){
