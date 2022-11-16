@@ -1,8 +1,8 @@
 pipeline {
     environment { 
         registry = 'tlrruddbs/spring-batch'
-        //registryUrl = 'https://registry.hub.docker.com/repository/docker/simjinwoo/guidancemanager'
-        registryUrl = 'https://github.com/tlrruddbs/springPractice'
+        registryUrl = 'https://registry.hub.docker.com/repository/docker/tlrruddbs/spring-batch'
+        //registryUrl = 'https://github.com/tlrruddbs/springPractice'
         //registryCredential = 'tlrruddbs'
         dockerImageTagBackend = "${registry}:spring-batch"
         dockerContainerNameBackend = 'spring-batch'
@@ -60,18 +60,25 @@ pipeline {
                     sh 'pwd'
                     sh 'ls -al'
                     sh 'rm -r springPractice'
-                    sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
+//                     sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
                     dir("springPractice"){
                         dir("batch"){
                             sh 'pwd'
                             sh 'chmod 555 ./gradlew'
                             sh "./gradlew clean build"
-                            sh "docker build -t tlrruddbs/spring-batch:0.0.1 ."
-                            sh 'docker run -d -p 8000:8000 -e "SPRING_PROFILES_ACTIVE=dev" --name spring-batch tlrruddbs/spring-batch:0.0.1'
-                            dir("build"){
-                                dir("lib"){
+                            script {
+                                backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/*.jar .")
+                                docker.withRegistry('', registryCredential){
+                                     backendImage.push()
                                 }
+                                backendImage.run("-p 8000:8000 -v /var/log/spring-batch:/logs -e \"SPRING_PROFILES_ACTIVE=dev\"  --name ${dockerContainerNameBackend}")
                             }
+//                             sh "docker build -t tlrruddbs/spring-batch:0.0.1 ."
+//                             sh 'docker run -d -p 8000:8000 -e "SPRING_PROFILES_ACTIVE=dev" --name spring-batch tlrruddbs/spring-batch:0.0.1'
+//                             dir("build"){
+//                                 dir("lib"){
+//                                 }
+//                             }
                         }
                     }
 
