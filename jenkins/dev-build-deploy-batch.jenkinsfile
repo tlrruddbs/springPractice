@@ -1,7 +1,8 @@
 pipeline {
     environment { 
         registry = 'tlrruddbs/spring-batch'
-        registryUrl = 'https://registry.hub.docker.com/repository/docker/tlrruddbs/spring-batch'
+        registryUrl = 'https://hub.docker.com/repository/docker/tlrruddbs/spring-batch'
+
         //registryUrl = 'https://github.com/tlrruddbs/springPractice'
         //registryCredential = 'tlrruddbs'
         dockerImageTagBackend = "${registry}:spring-batch"
@@ -71,7 +72,7 @@ pipeline {
                     failure {
                         sh 'echo "Fail Cloned Repository"'
                     }
-                    
+
                     dir("springPractice"){
                         dir("batch"){
                             sh 'pwd'
