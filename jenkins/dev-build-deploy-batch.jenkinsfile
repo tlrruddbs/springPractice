@@ -67,15 +67,7 @@ pipeline {
         }
         stage('Backend Build Stage') {
             steps {
-              dir("batch/"){
                 sh 'pwd'
-//                 script {
-//                     backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/batch-0.0.1-plain.jar .")
-//                     docker.withRegistry('', registryCredential){
-//                          backendImage.push()
-//                     }
-//                     backendImage.run("-p 8000:8000 -v /var/log/spring-batch:/logs -e \"SPRING_PROFILES_ACTIVE=dev\"  --name ${dockerContainerNameBackend}")
-//                 }
             }
         }
     }
