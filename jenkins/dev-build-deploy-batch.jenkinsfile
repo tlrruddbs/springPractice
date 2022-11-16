@@ -73,9 +73,7 @@ pipeline {
 //                     failure {
 //                         sh 'echo "Fail Cloned Repository"'
 //                     }
-
-                    dir("springPractice"){
-                        dir("batch"){
+                    sh 'cd springPractice/batch'
                             sh 'pwd'
                             sh 'chmod 555 ./gradlew'
                             sh "./gradlew clean build"
@@ -92,8 +90,6 @@ pipeline {
 //                                 dir("lib"){
 //                                 }
 //                             }
-                        }
-                    }
 
                 }
             }
