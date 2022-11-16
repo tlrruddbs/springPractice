@@ -64,7 +64,7 @@ pipeline {
 //                     sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
 
                     echo "${GIT_BRANCH_LOCAL} ---- ${registryUrl}"
-                    sh 'docker pull registry:1.0.0'
+                    sh 'docker pull ${registry}:1.0.0'
 //                     git branch: GIT_BRANCH_LOCAL,
 //                         url: registryUrl
 //                     success {
