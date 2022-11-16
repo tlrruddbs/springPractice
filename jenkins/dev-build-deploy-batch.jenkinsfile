@@ -75,8 +75,9 @@ pipeline {
 //                     }
                     sh 'chmod 555 ./gradlew'
                     sh "./gradlew clean build"
+
                     script {
-                        backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/*.jar .")
+                        backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/batch-0.0.1-plain.jar .")
                         docker.withRegistry('', registryCredential){
                              backendImage.push()
                         }
