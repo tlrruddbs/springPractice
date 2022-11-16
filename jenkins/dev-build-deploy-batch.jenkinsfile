@@ -95,7 +95,8 @@ pipeline {
                     docker.withRegistry('', registryCredential){
                          backendImage.push()
                     }
-                backendImage.run("-p 8000:8000 -v /var/log/spring-batch:/logs -e \"SPRING_PROFILES_ACTIVE=dev\"  --name ${dockerContainerNameBackend}")
+                    backendImage.run("-p 8000:8000 -v /var/log/spring-batch:/logs -e \"SPRING_PROFILES_ACTIVE=dev\"  --name ${dockerContainerNameBackend}")
+                }
             }
         }
         stage('Backend Build and Push and Run Stage for Docker') {
