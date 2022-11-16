@@ -1,5 +1,5 @@
 FROM openjdk:11-jdk
-RUN gradle clean build --no-daemon
+#RUN gradle clean build --no-daemon
 #ARG JAR_FILE=build/libs/batch-0.0.1-plain.jar \
 ARG JAR_FILE=/var/jenkins_home/workspace/aws/batch/build/libs/batch-0.0.1-plain.jar \
 COPY ${JAR_FILE} app.jar
