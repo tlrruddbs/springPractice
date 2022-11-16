@@ -63,7 +63,7 @@ pipeline {
 //                     sh 'rm -r springPractice'
 //                     sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
 
-
+                    echo "${GIT_BRANCH_LOCAL} ---- ${registryUrl}"
                     git branch: '${GIT_BRANCH_LOCAL}',
                         url: '${registryUrl}'
                     success {
