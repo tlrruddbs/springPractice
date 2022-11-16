@@ -59,8 +59,22 @@ pipeline {
                 dir("batch"){
                     sh 'pwd'
                     sh 'ls -al'
-                    sh 'rm -r springPractice'
+//                     sh 'rm -r springPractice'
 //                     sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
+
+                    steps {
+                        git branch: '${GIT_BRANCH_LOCAL}',
+                            url: '${registryUrl}'
+                    }
+
+                    post {
+                        success {
+                            sh 'echo "Successfully Cloned Repository"'
+                        }
+                        failure {
+                            sh 'echo "Fail Cloned Repository"'
+                        }
+                    }
                     dir("springPractice"){
                         dir("batch"){
                             sh 'pwd'
