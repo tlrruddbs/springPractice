@@ -55,49 +55,27 @@ pipeline {
         stage('Backend clean build') {
             steps {
                 echo '--------------------------------------------- setting ---------------------------------------------'
-                sh 'pwd'
-                sh 'ls -al'
                 dir("batch/"){
                     sh 'pwd'
                     sh 'ls -al'
-//                     sh 'rm -r springPractice'
-//                     sh 'git clone -b ${GIT_BRANCH_LOCAL} ${registryUrl}'
-
                     echo "${GIT_BRANCH_LOCAL} ---- ${registryUrl}"
                     sh 'docker pull ${registry}:1.0.0'
-//                     git branch: GIT_BRANCH_LOCAL,
-//                         url: registryUrl
-//                     success {
-//                         sh 'echo "Successfully Cloned Repository"'
-//                     }
-//                     failure {
-//                         sh 'echo "Fail Cloned Repository"'
-//                     }
                     sh 'chmod 555 ./gradlew'
                     sh "./gradlew clean build"
-
-
-//                             sh "docker build -t tlrruddbs/spring-batch:0.0.1 ."
-//                             sh 'docker run -d -p 8000:8000 -e "SPRING_PROFILES_ACTIVE=dev" --name spring-batch tlrruddbs/spring-batch:0.0.1'
-//                             dir("build"){
-//                                 dir("lib"){
-//                                 }
-//                             }
-
                 }
             }
         }
-        stage('Backend Build Stage') {
-            steps {
-              dir("batch/"){
-                script {
-                    backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/batch-0.0.1-plain.jar .")
-                    docker.withRegistry('', registryCredential){
-                         backendImage.push()
-                    }
-                    backendImage.run("-p 8000:8000 -v /var/log/spring-batch:/logs -e \"SPRING_PROFILES_ACTIVE=dev\"  --name ${dockerContainerNameBackend}")
-                }
-            }
-        }
+//         stage('Backend Build Stage') {
+//             steps {
+//               dir("batch/"){
+//                 script {
+//                     backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/batch-0.0.1-plain.jar .")
+//                     docker.withRegistry('', registryCredential){
+//                          backendImage.push()
+//                     }
+//                     backendImage.run("-p 8000:8000 -v /var/log/spring-batch:/logs -e \"SPRING_PROFILES_ACTIVE=dev\"  --name ${dockerContainerNameBackend}")
+//                 }
+//             }
+//         }
     }
 }
