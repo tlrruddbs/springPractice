@@ -1,5 +1,4 @@
 FROM openjdk:11-jdk
-RUN apk update && apk add --no-cache fontconfig ttf-dejavu
 ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
