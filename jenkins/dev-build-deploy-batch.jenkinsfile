@@ -59,7 +59,8 @@ pipeline {
                     sh 'pwd'
                     sh 'ls -al'
                     echo "${GIT_BRANCH_LOCAL} ---- ${registryUrl}"
-                    sh 'docker pull ${registry}:1.0.0'
+                    //sh 'docker pull ${registry}:1.0.0'
+                    sh 'docker pull tlrruddbs/spring-batch:1.0.0'
                     sh 'chmod 555 ./gradlew'
                     sh "./gradlew clean build"
                 }
