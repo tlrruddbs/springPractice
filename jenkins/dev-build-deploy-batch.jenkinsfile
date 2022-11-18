@@ -72,28 +72,15 @@ pipeline {
                 echo '--------------------------------------------- Backend Build and Push Stage for Docker ---------------------------------------------'
                 dir("batch/"){
                     sh 'pwd'
-                    script {
-                        //backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/*.jar .")
-                        backendImage = docker.build('tlrruddbs/spring-batch:1.0.0')
-                        docker.withRegistry('https://registry.hub.docker.com', registryCredential){
-                             backendImage.push()
-                        }
-                        backendImage.run("-p 8000:8000 -v /var/log/spring-batch:/logs -e \"SPRING_PROFILES_ACTIVE=dev\"  --name ${dockerContainerNameBackend}")
-                    }
+                    sh 'docker build --build-arg JAR_FILE=build/libs/batch-0.0.1.jar -t tlrruddbs/spring-batch:1.0.0 .'
                 }
             }
         }
         stage('Backend Build and Push and Run Stage for Docker') {
             steps {
                 echo '--------------------------------------------- Backend Build and Push Stage for Docker ---------------------------------------------'
-                dir('eipe-back/') {
-                    script {
-                        backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/*.jar .")
-                        docker.withRegistry('', registryCredential){
-                             backendImage.push()
-                        }
-                        backendImage.run("-p 8000:8000 -v /var/log/eipe-back:/logs -e \"SPRING_PROFILES_ACTIVE=dev\"  --name ${dockerContainerNameBackend}")
-                    }
+                dir('batch/') {
+                    sh 'docker run -d -p 8000:8000 -e "SPRING_PROFILES_ACTIVE=dev" --name spring-batch tlrruddbs/spring-batch:1.0.0'
                 }
             }
         }
