@@ -73,8 +73,9 @@ pipeline {
                 dir("batch/"){
                     sh 'pwd'
                     script {
-                        backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/*.jar .")
-                        docker.withRegistry('', registryCredential){
+                        //backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/*.jar .")
+                        backendImage = docker.build('tlrruddbs/spring-batch/batch')
+                        docker.withRegistry('https://registry.hub.docker.com', registryCredential){
                              backendImage.push()
                         }
                         backendImage.run("-p 8000:8000 -v /var/log/spring-batch:/logs -e \"SPRING_PROFILES_ACTIVE=dev\"  --name ${dockerContainerNameBackend}")
