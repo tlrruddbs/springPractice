@@ -5,7 +5,7 @@ pipeline {
 
         //registryUrl = 'https://github.com/tlrruddbs/springPractice'
         //registryCredential = 'tlrruddbs'
-        registryCredential = 'dockerhub-token'
+        registryCredential = '6fe77987-b296-4247-bdf6-da7fa7c1cc9f'
         dockerImageTagBackend = "${registry}:spring-batch"
         dockerContainerNameBackend = 'spring-batch'
 
@@ -73,7 +73,7 @@ pipeline {
                 dir("batch/"){
                     sh 'pwd'
                     script {
-                        backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=/var/jenkins_home/workspace/aws/batch/build/libs/batch-0.0.1-plain.jar .")
+                        backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/*.jar .")
                         docker.withRegistry('', registryCredential){
                              backendImage.push()
                         }
