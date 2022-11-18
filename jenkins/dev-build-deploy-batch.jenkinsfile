@@ -74,7 +74,7 @@ pipeline {
                     sh 'pwd'
                     script {
                         //backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/*.jar .")
-                        backendImage = docker.build('tlrruddbs/spring-batch/batch')
+                        backendImage = docker.build('tlrruddbs/spring-batch:1.0.0')
                         docker.withRegistry('https://registry.hub.docker.com', registryCredential){
                              backendImage.push()
                         }
