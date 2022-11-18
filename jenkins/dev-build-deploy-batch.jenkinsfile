@@ -69,7 +69,7 @@ pipeline {
             steps {
                 dir("batch/"){
                     script {
-                        backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=build/libs/batch-0.0.1-plain.jar .")
+                        backendImage = docker.build(dockerImageTagBackend, "--build-arg JAR_FILE=/var/jenkins_home/workspace/aws/batch/build/libs/batch-0.0.1-plain.jar .")
                         docker.withRegistry('', registryCredential){
                              backendImage.push()
                         }
