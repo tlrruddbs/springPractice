@@ -1,10 +1,11 @@
 pipeline {
     environment { 
-        registry = 'tlrruddbs/springPractice'
+        registry = 'tlrruddbs/spring-batch'
         registryUrl = 'https://hub.docker.com/repository/docker/tlrruddbs/spring-batch'
 
         //registryUrl = 'https://github.com/tlrruddbs/springPractice'
-        registryCredential = 'tlrruddbs'
+        //registryCredential = 'tlrruddbs'
+        registryCredential = 'dockerhub-token'
         dockerImageTagBackend = "${registry}:spring-batch"
         dockerContainerNameBackend = 'spring-batch'
 
