@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 60초마다 설정 파일의 변경을 확인 하여 변경시 갱신 -->
+<configuration scan="true" scanPeriod="60 seconds">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d{yyyyMMdd HH:mm:ss.SSS}] [%thread] [%-5level] %logger{5} - %m %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 파일경로 설정 -->
+        <file>logs/batch.log</file>
+
+        <!-- Rolling 정책 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- .gz,.zip 등을 넣으면 자동 일자별 로그파일 압축 -->
+            <fileNamePattern>logs/bkup/%d{yyyy-MM-dd}-batch.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- 파일당 최고 용량 kb, mb, gb -->
+                <maxFileSize>10GB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- 일자별 로그파일 최대 보관주기(~일), 해당 설정일 이상된 파일은 자동으로 제거-->
+            <maxHistory>30</maxHistory>
+            <!--<MinIndex>1</MinIndex>
+            <MaxIndex>10</MaxIndex>-->
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%d{yyyyMMdd HH:mm:ss.SSS}] [%thread] [%-5level] %logger{5} - %m %n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!--springProfile 태그를 사용하면 logback 설정파일에서 복수개의 프로파일을 설정할 수 있다.-->
+    <springProfile name="local">
+        <root level="WARN">
+            <appender-ref ref="STDOUT" />
+        </root>
+    </springProfile>
+
+    <springProfile name="dev">
+        <property resource="application.properties"/>
+        <root level="INFO">
+            <appender-ref ref="STDOUT" />
+            <appender-ref ref="FILE" />
+        </root>
+    </springProfile>
+</configuration>
