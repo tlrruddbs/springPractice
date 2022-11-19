@@ -39,7 +39,6 @@
     </springProfile>
 
     <springProfile name="dev">
-        <property resource="application.properties"/>
         <root level="INFO">
             <appender-ref ref="STDOUT" />
             <appender-ref ref="FILE" />
