@@ -30,6 +30,9 @@ public class ExampleScheduler {
             Map<String, JobParameter> jobParametersMap = new HashMap<>();
 
             SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            log.info("log info: {}", format1);
+            log.warn("log Warn: {}", format1);
+
             Date time = new Date();
 
             String time1 = format1.format(time);
