@@ -3,13 +3,13 @@
 <configuration scan="true" scanPeriod="60 seconds">
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>[%d{yyyyMMdd HH:mm:ss.SSS}] [%thread] [%-5level] %logger{5} - %m %n</pattern>
+            <pattern>[%d{yyyyMMdd}] [%thread] [%-5level] %logger{5} - %m %n</pattern>
         </encoder>
     </appender>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- 파일경로 설정 -->
-        <file>logs/batch.log</file>
+<!--        <file>./logs/batch.log</file>-->
 
         <!-- Rolling 정책 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">

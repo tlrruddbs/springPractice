@@ -16,6 +16,7 @@ public class MarketController {
 
     @GetMapping("ks")
     public String ks() throws Exception{
+        log.trace("log trace");
         log.info("log info!!!");
         log.warn("log warn!!!");
         log.error("log.error");
