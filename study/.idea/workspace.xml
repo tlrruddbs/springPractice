@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7281c39-a61e-4801-a590-09dd19f935b8" name="변경" comment="" />
+    <list default="true" id="984c2a44-59f7-4b17-b9ce-9bd5af049601" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +28,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -39,7 +38,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2HqfnZQ4kwEOpPUqjN4E3fwRcfw" />
+  <component name="ProjectId" id="2Hqvia5AYgjQZlsHDYJ9zJR5bxd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -54,8 +53,8 @@
     &quot;spring.configuration.checksum&quot;: &quot;f6a4f6d6ace0c759695a207dcee00187&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.StudyApplicationTests.stream">
-    <configuration name="StudyApplicationTests.binaryOperatior" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.LambdaTest">
+    <configuration name="LambdaTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -68,7 +67,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.study.study.StudyApplicationTests.binaryOperatior&quot;" />
+            <option value="&quot;com.study.study.LambdaTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -78,7 +77,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="StudyApplicationTests.intFunction" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LambdaTest.lambda" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -91,53 +90,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.study.study.StudyApplicationTests.intFunction&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="StudyApplicationTests.math" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.study.study.StudyApplicationTests.math&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="StudyApplicationTests.stream" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.study.study.StudyApplicationTests.stream&quot;" />
+            <option value="&quot;com.study.study.LambdaTest.lambda&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -156,22 +109,20 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.StudyApplicationTests.stream" />
-        <item itemvalue="Gradle.StudyApplicationTests.binaryOperatior" />
-        <item itemvalue="Gradle.StudyApplicationTests.intFunction" />
-        <item itemvalue="Gradle.StudyApplicationTests.math" />
+        <item itemvalue="Gradle.LambdaTest" />
+        <item itemvalue="Gradle.LambdaTest.lambda" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="c7281c39-a61e-4801-a590-09dd19f935b8" name="변경" comment="" />
-      <created>1669017702351</created>
+      <changelist id="ab05b2df-07ad-4a82-82a2-db5157541a0f" name="변경" comment="" />
+      <created>1669025562313</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1669017702351</updated>
-      <workItem from="1669017703703" duration="4629000" />
+      <updated>1669025562313</updated>
+      <workItem from="1669025563882" duration="525000" />
     </task>
     <servers />
   </component>
@@ -188,20 +139,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/com/study/study/StudyApplicationTests.java</url>
-          <line>28</line>
-          <properties class="com.study.study.StudyApplicationTests">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
