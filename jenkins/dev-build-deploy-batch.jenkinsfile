@@ -1,0 +1,88 @@
+pipeline {
+    environment { 
+        registry = 'tlrruddbs/spring-batch'
+        registryUrl = 'https://hub.docker.com/repository/docker/tlrruddbs/spring-batch'
+
+        //registryUrl = 'https://github.com/tlrruddbs/springPractice'
+        //registryCredential = 'tlrruddbs'
+        registryCredential = '6fe77987-b296-4247-bdf6-da7fa7c1cc9f'
+        dockerImageTagBackend = "${registry}:spring-batch"
+        dockerContainerNameBackend = 'spring-batch'
+
+        GIT_BRANCH_LOCAL = sh (
+                                script: "echo ${BRANCH_NAME} | sed -e 's|origin/||g'",
+                                returnStdout: true
+                            ).trim()
+    }
+
+    agent any
+
+    stages {
+        stage('Show parameters') {
+            steps {
+                echo "Show parameters Stage"
+                echo "BRANCH_NAME: ${BRANCH_NAME}"
+                echo "WORKSPACE: ${WORKSPACE}"
+            }
+        }
+
+
+        stage('Backend docker container stop Stage') {
+            steps {
+                echo '--------------------------------------------- Backend docker container stop Stage ---------------------------------------------'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh "docker stop spring-batch"
+                }
+            }
+        }
+
+        stage('Backend docker container remove Stage') {
+            steps {
+                echo '--------------------------------------------- Backend docker container remove Stage ---------------------------------------------'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh "docker rm spring-batch"
+                }
+            }
+        }
+        stage('Backend docker image remove Stage') {
+            steps {
+                echo '--------------------------------------------- Backend docker image remove Stage ---------------------------------------------'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh "docker rmi spring-batch"
+                }
+            }
+        }
+
+        stage('Backend clean build') {
+            steps {
+                echo '--------------------------------------------- setting ---------------------------------------------'
+                dir("batch/"){
+                    sh 'pwd'
+                    sh 'ls -al'
+                    echo "${GIT_BRANCH_LOCAL} ---- ${registryUrl}"
+                    //sh 'docker pull ${registry}:1.0.0'
+                    sh 'docker pull tlrruddbs/spring-batch:1.0.0'
+                    sh 'chmod 555 ./gradlew'
+                    sh "./gradlew clean build"
+                }
+            }
+        }
+        stage('Backend Build Stage') {
+            steps {
+                echo '--------------------------------------------- Backend Build and Push Stage for Docker ---------------------------------------------'
+                dir("batch/"){
+                    sh 'pwd'
+                    sh 'docker build --build-arg JAR_FILE=build/libs/batch-0.0.1.jar -t tlrruddbs/spring-batch:1.0.0 .'
+                }
+            }
+        }
+        stage('Backend Build and Push and Run Stage for Docker') {
+            steps {
+                echo '--------------------------------------------- Backend Build and Push Stage for Docker ---------------------------------------------'
+                dir('batch/') {
+                    sh 'docker run -d -p 8000:8000 -v /var/log/batch:/logs -e "SPRING_PROFILES_ACTIVE=dev" --name spring-batch tlrruddbs/spring-batch:1.0.0'
+                }
+            }
+        }
+    }
+}

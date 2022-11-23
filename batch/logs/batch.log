@@ -1,0 +1,1255 @@
+[20221119 22:51:02.668] [main] [ERROR] o.s.b.SpringApplication - Application run failed 
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.PropertyAction - Could not find resource [application.properties].
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:344)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.batch.BatchApplication.main(BatchApplication.java:12)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.PropertyAction - Could not find resource [application.properties].
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:329)
+	... 18 common frames omitted
+[20221119 22:51:39.437] [main] [INFO ] c.e.b.BatchApplication - Starting BatchApplication using Java 11.0.16.1 on DESKTOP-IMHL3QG with PID 15268 (C:\IntellijProject\batch\build\classes\java\main started by tlrruddbs in C:\IntellijProject\batch) 
+[20221119 22:51:39.441] [main] [INFO ] c.e.b.BatchApplication - The following 1 profile is active: "dev" 
+[20221119 22:51:40.261] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[20221119 22:51:40.381] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 96 ms. Found 2 JPA repository interfaces. 
+[20221119 22:51:40.948] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8000 (http) 
+[20221119 22:51:40.958] [main] [INFO ] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"] 
+[20221119 22:51:40.958] [main] [INFO ] o.a.c.c.StandardService - Starting service [Tomcat] 
+[20221119 22:51:40.958] [main] [INFO ] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.68] 
+[20221119 22:51:41.140] [main] [INFO ] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+[20221119 22:51:41.140] [main] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1647 ms 
+[20221119 22:51:41.362] [main] [INFO ] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+[20221119 22:51:41.428] [main] [INFO ] o.h.Version - HHH000412: Hibernate ORM core version 5.6.12.Final 
+[20221119 22:51:41.598] [main] [INFO ] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+[20221119 22:51:41.726] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+[20221119 22:51:41.949] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+[20221119 22:51:41.976] [main] [INFO ] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect 
+[20221119 22:51:42.682] [main] [INFO ] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+[20221119 22:51:42.692] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 22:51:43.059] [main] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[20221119 22:51:43.306] [main] [WARN ] o.s.b.a.b.JpaBatchConfigurer - JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'. 
+[20221119 22:51:43.321] [main] [INFO ] o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: MYSQL 
+[20221119 22:51:43.345] [main] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor. 
+[20221119 22:51:43.413] [main] [INFO ] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"] 
+[20221119 22:51:43.437] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path '' 
+[20221119 22:51:43.445] [scheduling-1] [INFO ] c.e.b.ExampleScheduler - log info: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 22:51:43.446] [scheduling-1] [WARN ] c.e.b.ExampleScheduler - log Warn: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 22:51:43.450] [main] [INFO ] c.e.b.BatchApplication - Started BatchApplication in 4.494 seconds (JVM running for 6.286) 
+[20221119 22:51:43.452] [main] [INFO ] o.s.b.a.b.JobLauncherApplicationRunner - Running default command line with: [] 
+[20221119 22:51:43.606] [scheduling-1] [WARN ] o.m.j.m.s.ErrorPacket - Error: 1062-23000: Duplicate entry '0' for key 'PRIMARY' 
+[20221119 22:51:43.717] [scheduling-1] [ERROR] o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task 
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_INSTANCE(JOB_INSTANCE_ID, JOB_NAME, JOB_KEY, VERSION) values (?, ?, ?, ?)]; (conn=1388) Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: (conn=1388) Duplicate entry '0' for key 'PRIMARY'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.createJobInstance(JdbcJobInstanceDao.java:120)
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:148)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy97.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy107.run(Unknown Source)
+	at com.example.batch.ExampleScheduler.startJob(ExampleScheduler.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=1388) Duplicate entry '0' for key 'PRIMARY'
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:290)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 45 common frames omitted
+[20221119 22:51:43.825] [main] [WARN ] o.m.j.m.s.ErrorPacket - Error: 1062-23000: Duplicate entry '0' for key 'PRIMARY' 
+[20221119 22:51:43.843] [main] [INFO ] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+[20221119 22:51:43.899] [main] [ERROR] o.s.b.SpringApplication - Application run failed 
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.batch.BatchApplication.main(BatchApplication.java:12)
+Caused by: org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_EXECUTION(JOB_EXECUTION_ID, JOB_INSTANCE_ID, START_TIME, END_TIME, STATUS, EXIT_CODE, EXIT_MESSAGE, VERSION, CREATE_TIME, LAST_UPDATED, JOB_CONFIGURATION_LOCATION) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]; (conn=1387) Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: (conn=1387) Duplicate entry '0' for key 'PRIMARY'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at org.springframework.batch.core.repository.dao.JdbcJobExecutionDao.saveJobExecution(JdbcJobExecutionDao.java:160)
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:158)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy97.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy107.run(Unknown Source)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:762)
+	... 5 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=1387) Duplicate entry '0' for key 'PRIMARY'
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:290)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 43 common frames omitted
+[20221119 22:51:44.876] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 22:51:44.878] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+[20221119 22:51:44.949] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+[20221119 22:52:35.999] [main] [INFO ] c.e.b.BatchApplication - Starting BatchApplication using Java 11.0.16.1 on DESKTOP-IMHL3QG with PID 25024 (C:\IntellijProject\batch\build\classes\java\main started by tlrruddbs in C:\IntellijProject\batch) 
+[20221119 22:52:36.003] [main] [INFO ] c.e.b.BatchApplication - The following 1 profile is active: "dev" 
+[20221119 22:52:36.983] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[20221119 22:52:37.045] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 2 JPA repository interfaces. 
+[20221119 22:52:37.648] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8000 (http) 
+[20221119 22:52:37.659] [main] [INFO ] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"] 
+[20221119 22:52:37.659] [main] [INFO ] o.a.c.c.StandardService - Starting service [Tomcat] 
+[20221119 22:52:37.659] [main] [INFO ] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.68] 
+[20221119 22:52:37.793] [main] [INFO ] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+[20221119 22:52:37.794] [main] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1727 ms 
+[20221119 22:52:37.985] [main] [INFO ] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+[20221119 22:52:38.036] [main] [INFO ] o.h.Version - HHH000412: Hibernate ORM core version 5.6.12.Final 
+[20221119 22:52:38.206] [main] [INFO ] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+[20221119 22:52:38.329] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+[20221119 22:52:38.433] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+[20221119 22:52:38.450] [main] [INFO ] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect 
+[20221119 22:52:39.107] [main] [INFO ] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+[20221119 22:52:39.124] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 22:52:39.500] [main] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[20221119 22:52:39.749] [main] [WARN ] o.s.b.a.b.JpaBatchConfigurer - JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'. 
+[20221119 22:52:39.762] [main] [INFO ] o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: MYSQL 
+[20221119 22:52:39.789] [main] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor. 
+[20221119 22:52:39.859] [main] [INFO ] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"] 
+[20221119 22:52:39.880] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path '' 
+[20221119 22:52:39.888] [scheduling-1] [INFO ] c.e.b.ExampleScheduler - log info: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 22:52:39.889] [scheduling-1] [WARN ] c.e.b.ExampleScheduler - log Warn: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 22:52:39.892] [main] [INFO ] c.e.b.BatchApplication - Started BatchApplication in 4.412 seconds (JVM running for 6.943) 
+[20221119 22:52:39.895] [main] [INFO ] o.s.b.a.b.JobLauncherApplicationRunner - Running default command line with: [] 
+[20221119 22:52:40.149] [main] [WARN ] o.m.j.m.s.ErrorPacket - Error: 1062-23000: Duplicate entry '0' for key 'PRIMARY' 
+[20221119 22:52:40.156] [scheduling-1] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - Job: [SimpleJob: [name=exampleJob]] launched with the following parameters: [{requestDate=2022-11-19 22:52:39}] 
+[20221119 22:52:40.229] [main] [INFO ] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+[20221119 22:52:40.258] [scheduling-1] [WARN ] o.s.b.c.l.AbstractListenerFactoryBean - org.springframework.batch.item.ItemProcessor is an interface. The implementing class will not be queried for annotation based listener configurations. If using @StepScope on a @Bean method, be sure to return the implementing class so listener annotations can be used. 
+[20221119 22:52:40.264] [main] [ERROR] o.s.b.SpringApplication - Application run failed 
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.batch.BatchApplication.main(BatchApplication.java:12)
+Caused by: org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_INSTANCE(JOB_INSTANCE_ID, JOB_NAME, JOB_KEY, VERSION) values (?, ?, ?, ?)]; (conn=1397) Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: (conn=1397) Duplicate entry '0' for key 'PRIMARY'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.createJobInstance(JdbcJobInstanceDao.java:120)
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:148)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy97.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy107.run(Unknown Source)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:762)
+	... 5 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=1397) Duplicate entry '0' for key 'PRIMARY'
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:290)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 43 common frames omitted
+[20221119 22:52:40.401] [scheduling-1] [INFO ] o.s.b.c.j.SimpleStepHandler - Executing step: [exampleStep] 
+[20221119 22:52:40.478] [scheduling-1] [INFO ] c.e.b.c.BatchConfig - ==> reader value : 2022-11-19 22:52:39 
+[20221119 22:52:40.760] [scheduling-1] [INFO ] o.s.b.c.s.AbstractStep - Step: [exampleStep] executed in 357ms 
+[20221119 22:52:40.867] [scheduling-1] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - Job: [SimpleJob: [name=exampleJob]] completed with the following parameters: [{requestDate=2022-11-19 22:52:39}] and the following status: [COMPLETED] in 631ms 
+[20221119 22:52:41.255] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 22:52:41.257] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+[20221119 22:52:41.324] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+[20221119 22:54:45.796] [main] [INFO ] c.e.b.BatchApplication - Starting BatchApplication using Java 11.0.16.1 on DESKTOP-IMHL3QG with PID 7944 (C:\IntellijProject\batch\build\classes\java\main started by tlrruddbs in C:\IntellijProject\batch) 
+[20221119 22:54:45.800] [main] [INFO ] c.e.b.BatchApplication - The following 1 profile is active: "dev" 
+[20221119 22:54:47.248] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[20221119 22:54:47.317] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces. 
+[20221119 22:54:47.881] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8000 (http) 
+[20221119 22:54:47.892] [main] [INFO ] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"] 
+[20221119 22:54:47.893] [main] [INFO ] o.a.c.c.StandardService - Starting service [Tomcat] 
+[20221119 22:54:47.893] [main] [INFO ] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.68] 
+[20221119 22:54:48.060] [main] [INFO ] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+[20221119 22:54:48.060] [main] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2206 ms 
+[20221119 22:54:48.260] [main] [INFO ] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+[20221119 22:54:48.325] [main] [INFO ] o.h.Version - HHH000412: Hibernate ORM core version 5.6.12.Final 
+[20221119 22:54:48.513] [main] [INFO ] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+[20221119 22:54:48.649] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+[20221119 22:54:48.755] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+[20221119 22:54:48.773] [main] [INFO ] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect 
+[20221119 22:54:49.421] [main] [INFO ] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+[20221119 22:54:49.431] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 22:54:49.805] [main] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[20221119 22:54:50.072] [main] [WARN ] o.s.b.a.b.JpaBatchConfigurer - JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'. 
+[20221119 22:54:50.083] [main] [INFO ] o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: MYSQL 
+[20221119 22:54:50.104] [main] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor. 
+[20221119 22:54:50.293] [main] [INFO ] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"] 
+[20221119 22:54:50.339] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path '' 
+[20221119 22:54:50.348] [scheduling-1] [INFO ] c.e.b.ExampleScheduler - log info: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 22:54:50.350] [scheduling-1] [WARN ] c.e.b.ExampleScheduler - log Warn: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 22:54:50.353] [main] [INFO ] c.e.b.BatchApplication - Started BatchApplication in 5.102 seconds (JVM running for 6.906) 
+[20221119 22:54:50.355] [main] [INFO ] o.s.b.a.b.JobLauncherApplicationRunner - Running default command line with: [] 
+[20221119 22:54:50.486] [scheduling-1] [WARN ] o.m.j.m.s.ErrorPacket - Error: 1062-23000: Duplicate entry '0' for key 'PRIMARY' 
+[20221119 22:54:50.516] [main] [WARN ] o.m.j.m.s.ErrorPacket - Error: 1062-23000: Duplicate entry '0' for key 'PRIMARY' 
+[20221119 22:54:50.619] [main] [INFO ] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+[20221119 22:54:50.621] [scheduling-1] [ERROR] o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task 
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_INSTANCE(JOB_INSTANCE_ID, JOB_NAME, JOB_KEY, VERSION) values (?, ?, ?, ?)]; (conn=1408) Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: (conn=1408) Duplicate entry '0' for key 'PRIMARY'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.createJobInstance(JdbcJobInstanceDao.java:120)
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:148)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy97.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy107.run(Unknown Source)
+	at com.example.batch.ExampleScheduler.startJob(ExampleScheduler.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=1408) Duplicate entry '0' for key 'PRIMARY'
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:290)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 45 common frames omitted
+[20221119 22:54:50.662] [main] [ERROR] o.s.b.SpringApplication - Application run failed 
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.batch.BatchApplication.main(BatchApplication.java:12)
+Caused by: org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_INSTANCE(JOB_INSTANCE_ID, JOB_NAME, JOB_KEY, VERSION) values (?, ?, ?, ?)]; (conn=1407) Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: (conn=1407) Duplicate entry '0' for key 'PRIMARY'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.createJobInstance(JdbcJobInstanceDao.java:120)
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:148)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy97.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy107.run(Unknown Source)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:762)
+	... 5 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=1407) Duplicate entry '0' for key 'PRIMARY'
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:290)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 43 common frames omitted
+[20221119 22:54:52.026] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 22:54:52.028] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+[20221119 22:54:52.103] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+[20221119 22:58:03.468] [main] [INFO ] c.e.b.BatchApplication - Starting BatchApplication using Java 11.0.16.1 on DESKTOP-IMHL3QG with PID 25312 (C:\IntellijProject\batch\build\classes\java\main started by tlrruddbs in C:\IntellijProject\batch) 
+[20221119 22:58:03.471] [main] [INFO ] c.e.b.BatchApplication - The following 1 profile is active: "dev" 
+[20221119 22:58:04.147] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[20221119 22:58:04.204] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces. 
+[20221119 22:58:04.693] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8000 (http) 
+[20221119 22:58:04.702] [main] [INFO ] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"] 
+[20221119 22:58:04.702] [main] [INFO ] o.a.c.c.StandardService - Starting service [Tomcat] 
+[20221119 22:58:04.703] [main] [INFO ] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.68] 
+[20221119 22:58:04.844] [main] [INFO ] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+[20221119 22:58:04.845] [main] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1327 ms 
+[20221119 22:58:05.025] [main] [INFO ] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+[20221119 22:58:05.074] [main] [INFO ] o.h.Version - HHH000412: Hibernate ORM core version 5.6.12.Final 
+[20221119 22:58:05.223] [main] [INFO ] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+[20221119 22:58:05.336] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+[20221119 22:58:05.448] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+[20221119 22:58:05.466] [main] [INFO ] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect 
+[20221119 22:58:06.075] [main] [INFO ] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+[20221119 22:58:06.087] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 22:58:06.481] [main] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[20221119 22:58:06.714] [main] [WARN ] o.s.b.a.b.JpaBatchConfigurer - JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'. 
+[20221119 22:58:06.728] [main] [INFO ] o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: MYSQL 
+[20221119 22:58:06.745] [main] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor. 
+[20221119 22:58:06.811] [main] [INFO ] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"] 
+[20221119 22:58:06.829] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path '' 
+[20221119 22:58:06.837] [scheduling-1] [INFO ] c.e.b.ExampleScheduler - log info: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 22:58:06.839] [scheduling-1] [WARN ] c.e.b.ExampleScheduler - log Warn: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 22:58:06.842] [main] [INFO ] c.e.b.BatchApplication - Started BatchApplication in 3.854 seconds (JVM running for 5.613) 
+[20221119 22:58:06.845] [main] [INFO ] o.s.b.a.b.JobLauncherApplicationRunner - Running default command line with: [] 
+[20221119 22:58:06.962] [scheduling-1] [WARN ] o.m.j.m.s.ErrorPacket - Error: 1062-23000: Duplicate entry '0' for key 'PRIMARY' 
+[20221119 22:58:06.987] [main] [WARN ] o.m.j.m.s.ErrorPacket - Error: 1062-23000: Duplicate entry '0' for key 'PRIMARY' 
+[20221119 22:58:07.051] [scheduling-1] [ERROR] o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task 
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_INSTANCE(JOB_INSTANCE_ID, JOB_NAME, JOB_KEY, VERSION) values (?, ?, ?, ?)]; (conn=1418) Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: (conn=1418) Duplicate entry '0' for key 'PRIMARY'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.createJobInstance(JdbcJobInstanceDao.java:120)
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:148)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy97.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy107.run(Unknown Source)
+	at com.example.batch.ExampleScheduler.startJob(ExampleScheduler.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=1418) Duplicate entry '0' for key 'PRIMARY'
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:290)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 45 common frames omitted
+[20221119 22:58:07.052] [main] [INFO ] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+[20221119 22:58:07.085] [main] [ERROR] o.s.b.SpringApplication - Application run failed 
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.batch.BatchApplication.main(BatchApplication.java:12)
+Caused by: org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_INSTANCE(JOB_INSTANCE_ID, JOB_NAME, JOB_KEY, VERSION) values (?, ?, ?, ?)]; (conn=1417) Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: (conn=1417) Duplicate entry '0' for key 'PRIMARY'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.createJobInstance(JdbcJobInstanceDao.java:120)
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:148)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy97.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy107.run(Unknown Source)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:762)
+	... 5 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=1417) Duplicate entry '0' for key 'PRIMARY'
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:290)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 43 common frames omitted
+[20221119 22:58:08.196] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 22:58:08.199] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+[20221119 22:58:08.271] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+[20221119 22:59:20.540] [main] [INFO ] c.e.b.BatchApplication - Starting BatchApplication using Java 11.0.16.1 on DESKTOP-IMHL3QG with PID 25596 (C:\IntellijProject\batch\build\classes\java\main started by tlrruddbs in C:\IntellijProject\batch) 
+[20221119 22:59:20.543] [main] [INFO ] c.e.b.BatchApplication - The following 1 profile is active: "dev" 
+[20221119 22:59:21.236] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[20221119 22:59:21.303] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 2 JPA repository interfaces. 
+[20221119 22:59:21.802] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8000 (http) 
+[20221119 22:59:21.811] [main] [INFO ] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"] 
+[20221119 22:59:21.811] [main] [INFO ] o.a.c.c.StandardService - Starting service [Tomcat] 
+[20221119 22:59:21.811] [main] [INFO ] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.68] 
+[20221119 22:59:21.956] [main] [INFO ] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+[20221119 22:59:21.957] [main] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1371 ms 
+[20221119 22:59:22.144] [main] [INFO ] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+[20221119 22:59:22.195] [main] [INFO ] o.h.Version - HHH000412: Hibernate ORM core version 5.6.12.Final 
+[20221119 22:59:22.361] [main] [INFO ] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+[20221119 22:59:22.487] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+[20221119 22:59:22.593] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+[20221119 22:59:22.620] [main] [INFO ] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect 
+[20221119 22:59:23.348] [main] [INFO ] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+[20221119 22:59:23.383] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 22:59:24.703] [main] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[20221119 22:59:24.984] [main] [WARN ] o.s.b.a.b.JpaBatchConfigurer - JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'. 
+[20221119 22:59:24.998] [main] [INFO ] o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: MYSQL 
+[20221119 22:59:25.017] [main] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor. 
+[20221119 22:59:25.086] [main] [INFO ] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"] 
+[20221119 22:59:25.105] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path '' 
+[20221119 22:59:25.116] [scheduling-1] [INFO ] c.e.b.ExampleScheduler - log info: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 22:59:25.118] [scheduling-1] [WARN ] c.e.b.ExampleScheduler - log Warn: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 22:59:25.122] [main] [INFO ] c.e.b.BatchApplication - Started BatchApplication in 5.301 seconds (JVM running for 6.991) 
+[20221119 22:59:25.124] [main] [INFO ] o.s.b.a.b.JobLauncherApplicationRunner - Running default command line with: [] 
+[20221119 22:59:25.371] [main] [WARN ] o.m.j.m.s.ErrorPacket - Error: 1062-23000: Duplicate entry '0' for key 'PRIMARY' 
+[20221119 22:59:25.380] [scheduling-1] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - Job: [SimpleJob: [name=exampleJob]] launched with the following parameters: [{requestDate=2022-11-19 22:59:25}] 
+[20221119 22:59:25.459] [main] [INFO ] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+[20221119 22:59:25.487] [main] [ERROR] o.s.b.SpringApplication - Application run failed 
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.batch.BatchApplication.main(BatchApplication.java:12)
+Caused by: org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_INSTANCE(JOB_INSTANCE_ID, JOB_NAME, JOB_KEY, VERSION) values (?, ?, ?, ?)]; (conn=1428) Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: (conn=1428) Duplicate entry '0' for key 'PRIMARY'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.createJobInstance(JdbcJobInstanceDao.java:120)
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:148)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy97.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy107.run(Unknown Source)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:762)
+	... 5 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=1428) Duplicate entry '0' for key 'PRIMARY'
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:290)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 43 common frames omitted
+[20221119 22:59:25.502] [scheduling-1] [WARN ] o.s.b.c.l.AbstractListenerFactoryBean - org.springframework.batch.item.ItemProcessor is an interface. The implementing class will not be queried for annotation based listener configurations. If using @StepScope on a @Bean method, be sure to return the implementing class so listener annotations can be used. 
+[20221119 22:59:25.647] [scheduling-1] [INFO ] o.s.b.c.j.SimpleStepHandler - Executing step: [exampleStep] 
+[20221119 22:59:25.714] [scheduling-1] [INFO ] c.e.b.c.BatchConfig - ==> reader value : 2022-11-19 22:59:25 
+[20221119 22:59:25.996] [scheduling-1] [INFO ] o.s.b.c.s.AbstractStep - Step: [exampleStep] executed in 349ms 
+[20221119 22:59:26.106] [scheduling-1] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - Job: [SimpleJob: [name=exampleJob]] completed with the following parameters: [{requestDate=2022-11-19 22:59:25}] and the following status: [COMPLETED] in 627ms 
+[20221119 22:59:26.551] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 22:59:26.553] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+[20221119 22:59:26.651] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+[20221119 23:06:04.047] [main] [INFO ] c.e.b.BatchApplication - Starting BatchApplication using Java 11.0.16.1 on DESKTOP-IMHL3QG with PID 12464 (C:\IntellijProject\batch\build\classes\java\main started by tlrruddbs in C:\IntellijProject\batch) 
+[20221119 23:06:04.050] [main] [INFO ] c.e.b.BatchApplication - The following 1 profile is active: "dev" 
+[20221119 23:06:04.704] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[20221119 23:06:04.759] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces. 
+[20221119 23:06:05.252] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8000 (http) 
+[20221119 23:06:05.262] [main] [INFO ] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"] 
+[20221119 23:06:05.262] [main] [INFO ] o.a.c.c.StandardService - Starting service [Tomcat] 
+[20221119 23:06:05.262] [main] [INFO ] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.68] 
+[20221119 23:06:05.410] [main] [INFO ] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+[20221119 23:06:05.410] [main] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1311 ms 
+[20221119 23:06:05.604] [main] [INFO ] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+[20221119 23:06:05.665] [main] [INFO ] o.h.Version - HHH000412: Hibernate ORM core version 5.6.12.Final 
+[20221119 23:06:05.844] [main] [INFO ] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+[20221119 23:06:05.958] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+[20221119 23:06:06.061] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+[20221119 23:06:06.085] [main] [INFO ] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect 
+[20221119 23:06:06.761] [main] [INFO ] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+[20221119 23:06:06.770] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 23:06:07.143] [main] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[20221119 23:06:07.374] [main] [WARN ] o.s.b.a.b.JpaBatchConfigurer - JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'. 
+[20221119 23:06:07.387] [main] [INFO ] o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: MYSQL 
+[20221119 23:06:07.405] [main] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor. 
+[20221119 23:06:07.483] [main] [INFO ] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"] 
+[20221119 23:06:07.502] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path '' 
+[20221119 23:06:07.510] [scheduling-1] [INFO ] c.e.b.ExampleScheduler - log info: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 23:06:07.512] [scheduling-1] [WARN ] c.e.b.ExampleScheduler - log Warn: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 23:06:07.516] [main] [INFO ] c.e.b.BatchApplication - Started BatchApplication in 3.956 seconds (JVM running for 6.065) 
+[20221119 23:06:07.518] [main] [INFO ] o.s.b.a.b.JobLauncherApplicationRunner - Running default command line with: [] 
+[20221119 23:06:07.698] [scheduling-1] [WARN ] o.m.j.m.s.ErrorPacket - Error: 1452-23000: Cannot add or update a child row: a foreign key constraint fails (`venh_batch`.`batch_job_execution`, CONSTRAINT `JOB_INST_EXEC_FK` FOREIGN KEY (`JOB_INSTANCE_ID`) REFERENCES `batch_job_instance` (`JOB_INSTANCE_ID`)) 
+[20221119 23:06:07.727] [main] [WARN ] o.m.j.m.s.ErrorPacket - Error: 1452-23000: Cannot add or update a child row: a foreign key constraint fails (`venh_batch`.`batch_job_execution`, CONSTRAINT `JOB_INST_EXEC_FK` FOREIGN KEY (`JOB_INSTANCE_ID`) REFERENCES `batch_job_instance` (`JOB_INSTANCE_ID`)) 
+[20221119 23:06:07.778] [main] [INFO ] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+[20221119 23:06:07.779] [scheduling-1] [ERROR] o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task 
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_EXECUTION(JOB_EXECUTION_ID, JOB_INSTANCE_ID, START_TIME, END_TIME, STATUS, EXIT_CODE, EXIT_MESSAGE, VERSION, CREATE_TIME, LAST_UPDATED, JOB_CONFIGURATION_LOCATION) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]; (conn=1438) Cannot add or update a child row: a foreign key constraint fails (`venh_batch`.`batch_job_execution`, CONSTRAINT `JOB_INST_EXEC_FK` FOREIGN KEY (`JOB_INSTANCE_ID`) REFERENCES `batch_job_instance` (`JOB_INSTANCE_ID`)); nested exception is java.sql.SQLIntegrityConstraintViolationException: (conn=1438) Cannot add or update a child row: a foreign key constraint fails (`venh_batch`.`batch_job_execution`, CONSTRAINT `JOB_INST_EXEC_FK` FOREIGN KEY (`JOB_INSTANCE_ID`) REFERENCES `batch_job_instance` (`JOB_INSTANCE_ID`))
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:251)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at org.springframework.batch.core.repository.dao.JdbcJobExecutionDao.saveJobExecution(JdbcJobExecutionDao.java:160)
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:158)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy97.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy107.run(Unknown Source)
+	at com.example.batch.ExampleScheduler.startJob(ExampleScheduler.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=1438) Cannot add or update a child row: a foreign key constraint fails (`venh_batch`.`batch_job_execution`, CONSTRAINT `JOB_INST_EXEC_FK` FOREIGN KEY (`JOB_INSTANCE_ID`) REFERENCES `batch_job_instance` (`JOB_INSTANCE_ID`))
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:290)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 45 common frames omitted
+[20221119 23:06:07.825] [main] [ERROR] o.s.b.SpringApplication - Application run failed 
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.batch.BatchApplication.main(BatchApplication.java:12)
+Caused by: org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_EXECUTION(JOB_EXECUTION_ID, JOB_INSTANCE_ID, START_TIME, END_TIME, STATUS, EXIT_CODE, EXIT_MESSAGE, VERSION, CREATE_TIME, LAST_UPDATED, JOB_CONFIGURATION_LOCATION) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]; (conn=1437) Cannot add or update a child row: a foreign key constraint fails (`venh_batch`.`batch_job_execution`, CONSTRAINT `JOB_INST_EXEC_FK` FOREIGN KEY (`JOB_INSTANCE_ID`) REFERENCES `batch_job_instance` (`JOB_INSTANCE_ID`)); nested exception is java.sql.SQLIntegrityConstraintViolationException: (conn=1437) Cannot add or update a child row: a foreign key constraint fails (`venh_batch`.`batch_job_execution`, CONSTRAINT `JOB_INST_EXEC_FK` FOREIGN KEY (`JOB_INSTANCE_ID`) REFERENCES `batch_job_instance` (`JOB_INSTANCE_ID`))
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:251)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at org.springframework.batch.core.repository.dao.JdbcJobExecutionDao.saveJobExecution(JdbcJobExecutionDao.java:160)
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:158)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy97.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy107.run(Unknown Source)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:762)
+	... 5 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=1437) Cannot add or update a child row: a foreign key constraint fails (`venh_batch`.`batch_job_execution`, CONSTRAINT `JOB_INST_EXEC_FK` FOREIGN KEY (`JOB_INSTANCE_ID`) REFERENCES `batch_job_instance` (`JOB_INSTANCE_ID`))
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:290)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 43 common frames omitted
+[20221119 23:06:08.815] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 23:06:08.817] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+[20221119 23:06:08.888] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+[20221119 23:07:23.493] [main] [INFO ] c.e.b.BatchApplication - Starting BatchApplication using Java 11.0.16.1 on DESKTOP-IMHL3QG with PID 17996 (C:\IntellijProject\batch\build\classes\java\main started by tlrruddbs in C:\IntellijProject\batch) 
+[20221119 23:07:23.496] [main] [INFO ] c.e.b.BatchApplication - The following 1 profile is active: "dev" 
+[20221119 23:07:24.283] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[20221119 23:07:24.342] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces. 
+[20221119 23:07:24.823] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8000 (http) 
+[20221119 23:07:24.831] [main] [INFO ] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"] 
+[20221119 23:07:24.832] [main] [INFO ] o.a.c.c.StandardService - Starting service [Tomcat] 
+[20221119 23:07:24.832] [main] [INFO ] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.68] 
+[20221119 23:07:24.972] [main] [INFO ] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+[20221119 23:07:24.972] [main] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1425 ms 
+[20221119 23:07:25.157] [main] [INFO ] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+[20221119 23:07:25.204] [main] [INFO ] o.h.Version - HHH000412: Hibernate ORM core version 5.6.12.Final 
+[20221119 23:07:25.353] [main] [INFO ] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+[20221119 23:07:25.472] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+[20221119 23:07:25.564] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+[20221119 23:07:25.579] [main] [INFO ] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect 
+[20221119 23:07:26.253] [main] [INFO ] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+[20221119 23:07:26.263] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 23:07:26.624] [main] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[20221119 23:07:26.851] [main] [WARN ] o.s.b.a.b.JpaBatchConfigurer - JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'. 
+[20221119 23:07:26.863] [main] [INFO ] o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: MYSQL 
+[20221119 23:07:26.881] [main] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor. 
+[20221119 23:07:26.948] [main] [INFO ] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"] 
+[20221119 23:07:26.967] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path '' 
+[20221119 23:07:26.975] [scheduling-1] [INFO ] c.e.b.ExampleScheduler - log info: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 23:07:26.976] [scheduling-1] [WARN ] c.e.b.ExampleScheduler - log Warn: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 23:07:26.979] [main] [INFO ] c.e.b.BatchApplication - Started BatchApplication in 4.038 seconds (JVM running for 6.17) 
+[20221119 23:07:26.981] [main] [INFO ] o.s.b.a.b.JobLauncherApplicationRunner - Running default command line with: [] 
+[20221119 23:07:27.193] [main] [WARN ] o.m.j.m.s.ErrorPacket - Error: 1062-23000: Duplicate entry '0' for key 'PRIMARY' 
+[20221119 23:07:27.200] [scheduling-1] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - Job: [SimpleJob: [name=exampleJob]] launched with the following parameters: [{requestDate=2022-11-19 23:07:26}] 
+[20221119 23:07:27.283] [main] [INFO ] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+[20221119 23:07:27.307] [scheduling-1] [WARN ] o.s.b.c.l.AbstractListenerFactoryBean - org.springframework.batch.item.ItemProcessor is an interface. The implementing class will not be queried for annotation based listener configurations. If using @StepScope on a @Bean method, be sure to return the implementing class so listener annotations can be used. 
+[20221119 23:07:27.313] [main] [ERROR] o.s.b.SpringApplication - Application run failed 
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.batch.BatchApplication.main(BatchApplication.java:12)
+Caused by: org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_INSTANCE(JOB_INSTANCE_ID, JOB_NAME, JOB_KEY, VERSION) values (?, ?, ?, ?)]; (conn=1447) Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: (conn=1447) Duplicate entry '0' for key 'PRIMARY'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.createJobInstance(JdbcJobInstanceDao.java:120)
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:148)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy97.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy107.run(Unknown Source)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:762)
+	... 5 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=1447) Duplicate entry '0' for key 'PRIMARY'
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:290)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 43 common frames omitted
+[20221119 23:07:27.441] [scheduling-1] [INFO ] o.s.b.c.j.SimpleStepHandler - Executing step: [exampleStep] 
+[20221119 23:07:27.508] [scheduling-1] [INFO ] c.e.b.c.BatchConfig - ==> reader value : 2022-11-19 23:07:26 
+[20221119 23:07:27.756] [scheduling-1] [INFO ] o.s.b.c.s.AbstractStep - Step: [exampleStep] executed in 313ms 
+[20221119 23:07:27.840] [scheduling-1] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - Job: [SimpleJob: [name=exampleJob]] completed with the following parameters: [{requestDate=2022-11-19 23:07:26}] and the following status: [COMPLETED] in 563ms 
+[20221119 23:07:28.289] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 23:07:28.290] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+[20221119 23:07:28.355] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+[20221119 23:07:35.499] [main] [INFO ] c.e.b.BatchApplication - Starting BatchApplication using Java 11.0.16.1 on DESKTOP-IMHL3QG with PID 21312 (C:\IntellijProject\batch\build\classes\java\main started by tlrruddbs in C:\IntellijProject\batch) 
+[20221119 23:07:35.502] [main] [INFO ] c.e.b.BatchApplication - The following 1 profile is active: "dev" 
+[20221119 23:07:36.240] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[20221119 23:07:36.299] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 2 JPA repository interfaces. 
+[20221119 23:07:36.845] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8000 (http) 
+[20221119 23:07:36.855] [main] [INFO ] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"] 
+[20221119 23:07:36.856] [main] [INFO ] o.a.c.c.StandardService - Starting service [Tomcat] 
+[20221119 23:07:36.856] [main] [INFO ] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.68] 
+[20221119 23:07:37.013] [main] [INFO ] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+[20221119 23:07:37.013] [main] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1462 ms 
+[20221119 23:07:37.232] [main] [INFO ] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+[20221119 23:07:37.281] [main] [INFO ] o.h.Version - HHH000412: Hibernate ORM core version 5.6.12.Final 
+[20221119 23:07:37.445] [main] [INFO ] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+[20221119 23:07:37.557] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+[20221119 23:07:37.651] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+[20221119 23:07:37.669] [main] [INFO ] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect 
+[20221119 23:07:38.283] [main] [INFO ] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+[20221119 23:07:38.314] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 23:07:38.701] [main] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[20221119 23:07:38.923] [main] [WARN ] o.s.b.a.b.JpaBatchConfigurer - JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'. 
+[20221119 23:07:38.936] [main] [INFO ] o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: MYSQL 
+[20221119 23:07:38.957] [main] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor. 
+[20221119 23:07:39.026] [main] [INFO ] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"] 
+[20221119 23:07:39.045] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path '' 
+[20221119 23:07:39.053] [scheduling-1] [INFO ] c.e.b.ExampleScheduler - log info: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 23:07:39.055] [scheduling-1] [WARN ] c.e.b.ExampleScheduler - log Warn: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 23:07:39.059] [main] [INFO ] c.e.b.BatchApplication - Started BatchApplication in 4.036 seconds (JVM running for 6.398) 
+[20221119 23:07:39.062] [main] [INFO ] o.s.b.a.b.JobLauncherApplicationRunner - Running default command line with: [] 
+[20221119 23:07:39.194] [scheduling-1] [WARN ] o.m.j.m.s.ErrorPacket - Error: 1062-23000: Duplicate entry '0' for key 'PRIMARY' 
+[20221119 23:07:39.224] [main] [WARN ] o.m.j.m.s.ErrorPacket - Error: 1062-23000: Duplicate entry '0' for key 'PRIMARY' 
+[20221119 23:07:39.276] [main] [INFO ] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+[20221119 23:07:39.276] [scheduling-1] [ERROR] o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task 
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_INSTANCE(JOB_INSTANCE_ID, JOB_NAME, JOB_KEY, VERSION) values (?, ?, ?, ?)]; (conn=1458) Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: (conn=1458) Duplicate entry '0' for key 'PRIMARY'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.createJobInstance(JdbcJobInstanceDao.java:120)
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:148)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy97.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy107.run(Unknown Source)
+	at com.example.batch.ExampleScheduler.startJob(ExampleScheduler.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=1458) Duplicate entry '0' for key 'PRIMARY'
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:290)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 45 common frames omitted
+[20221119 23:07:39.322] [main] [ERROR] o.s.b.SpringApplication - Application run failed 
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.batch.BatchApplication.main(BatchApplication.java:12)
+Caused by: org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_INSTANCE(JOB_INSTANCE_ID, JOB_NAME, JOB_KEY, VERSION) values (?, ?, ?, ?)]; (conn=1457) Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: (conn=1457) Duplicate entry '0' for key 'PRIMARY'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.createJobInstance(JdbcJobInstanceDao.java:120)
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:148)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy97.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy107.run(Unknown Source)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:762)
+	... 5 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=1457) Duplicate entry '0' for key 'PRIMARY'
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:290)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:95)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:334)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:311)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 43 common frames omitted
+[20221119 23:07:40.281] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 23:07:40.283] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+[20221119 23:07:40.357] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+[20221119 23:15:08.608] [main] [INFO ] c.e.b.BatchApplication - Starting BatchApplication using Java 11.0.16.1 on DESKTOP-IMHL3QG with PID 10976 (C:\IntellijProject\batch\build\classes\java\main started by tlrruddbs in C:\IntellijProject\batch) 
+[20221119 23:15:08.611] [main] [INFO ] c.e.b.BatchApplication - The following 1 profile is active: "dev" 
+[20221119 23:15:09.412] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[20221119 23:15:09.481] [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 2 JPA repository interfaces. 
+[20221119 23:15:10.007] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8000 (http) 
+[20221119 23:15:10.018] [main] [INFO ] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"] 
+[20221119 23:15:10.019] [main] [INFO ] o.a.c.c.StandardService - Starting service [Tomcat] 
+[20221119 23:15:10.019] [main] [INFO ] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.68] 
+[20221119 23:15:10.180] [main] [INFO ] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+[20221119 23:15:10.180] [main] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1513 ms 
+[20221119 23:15:10.376] [main] [INFO ] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+[20221119 23:15:10.440] [main] [INFO ] o.h.Version - HHH000412: Hibernate ORM core version 5.6.12.Final 
+[20221119 23:15:10.621] [main] [INFO ] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+[20221119 23:15:10.748] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+[20221119 23:15:10.859] [main] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+[20221119 23:15:10.877] [main] [INFO ] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect 
+[20221119 23:15:11.568] [main] [INFO ] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+[20221119 23:15:11.580] [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 23:15:11.954] [main] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[20221119 23:15:12.211] [main] [WARN ] o.s.b.a.b.JpaBatchConfigurer - JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'. 
+[20221119 23:15:12.223] [main] [INFO ] o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: MYSQL 
+[20221119 23:15:12.244] [main] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor. 
+[20221119 23:15:12.313] [main] [INFO ] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"] 
+[20221119 23:15:12.334] [main] [INFO ] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path '' 
+[20221119 23:15:12.342] [scheduling-1] [INFO ] c.e.b.ExampleScheduler - log info: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 23:15:12.343] [scheduling-1] [WARN ] c.e.b.ExampleScheduler - log Warn: java.text.SimpleDateFormat@4f76f1a0 
+[20221119 23:15:12.347] [main] [INFO ] c.e.b.BatchApplication - Started BatchApplication in 4.295 seconds (JVM running for 6.365) 
+[20221119 23:15:12.349] [main] [INFO ] o.s.b.a.b.JobLauncherApplicationRunner - Running default command line with: [] 
+[20221119 23:15:12.603] [scheduling-1] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - Job: [SimpleJob: [name=exampleJob]] launched with the following parameters: [{requestDate=2022-11-19 23:15:12}] 
+[20221119 23:15:12.607] [main] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - Job: [SimpleJob: [name=exampleJob]] launched with the following parameters: [{}] 
+[20221119 23:15:12.716] [main] [WARN ] o.s.b.c.l.AbstractListenerFactoryBean - org.springframework.batch.item.ItemProcessor is an interface. The implementing class will not be queried for annotation based listener configurations. If using @StepScope on a @Bean method, be sure to return the implementing class so listener annotations can be used. 
+[20221119 23:15:12.746] [scheduling-1] [WARN ] o.s.b.c.l.AbstractListenerFactoryBean - org.springframework.batch.item.ItemProcessor is an interface. The implementing class will not be queried for annotation based listener configurations. If using @StepScope on a @Bean method, be sure to return the implementing class so listener annotations can be used. 
+[20221119 23:15:12.882] [main] [INFO ] o.s.b.c.j.SimpleStepHandler - Executing step: [exampleStep] 
+[20221119 23:15:12.902] [scheduling-1] [INFO ] o.s.b.c.j.SimpleStepHandler - Executing step: [exampleStep] 
+[20221119 23:15:12.965] [main] [INFO ] c.e.b.c.BatchConfig - ==> reader value : null 
+[20221119 23:15:12.969] [scheduling-1] [INFO ] c.e.b.c.BatchConfig - ==> reader value : 2022-11-19 23:15:12 
+[20221119 23:15:13.240] [main] [INFO ] o.s.b.c.s.AbstractStep - Step: [exampleStep] executed in 357ms 
+[20221119 23:15:13.241] [scheduling-1] [INFO ] o.s.b.c.s.AbstractStep - Step: [exampleStep] executed in 338ms 
+[20221119 23:15:13.330] [scheduling-1] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - Job: [SimpleJob: [name=exampleJob]] completed with the following parameters: [{requestDate=2022-11-19 23:15:12}] and the following status: [COMPLETED] in 650ms 
+[20221119 23:15:13.334] [main] [INFO ] o.s.b.c.l.s.SimpleJobLauncher - Job: [SimpleJob: [name=exampleJob]] completed with the following parameters: [{}] and the following status: [COMPLETED] in 650ms 
+[20221119 23:15:18.972] [SpringApplicationShutdownHook] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+[20221119 23:15:18.973] [SpringApplicationShutdownHook] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+[20221119 23:15:19.044] [SpringApplicationShutdownHook] [INFO ] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
