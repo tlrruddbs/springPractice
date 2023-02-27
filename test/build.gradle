@@ -22,6 +22,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-aop'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'junit:junit:4.13.1'
+	implementation 'junit:junit:4.13.1'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -30,8 +33,14 @@ dependencies {
 	//테스트에서 lombok 사용
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
-}
+	testCompileOnly("org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.1.1")
 
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+
+
+}
 tasks.named('test') {
 	useJUnitPlatform()
 }
