@@ -15,7 +15,7 @@ public class Member {
     @Column(name = "member_id") @GeneratedValue
     private long id;
 
-    private String name;
+    private String userName;
     @Embedded
     private Address address;
 
