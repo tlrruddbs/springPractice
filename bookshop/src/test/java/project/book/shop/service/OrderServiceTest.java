@@ -44,7 +44,7 @@ public class OrderServiceTest {
         book.setPrice(10000);
         book.setStockQuantity(10);
         int orderCount = 2;
-        itemRepository.save(book);
+        itemRepository.save(book); 
 
         Book findBook = (Book) itemRepository.findById(book.getId()).get();
         System.out.println(findBook.getId());
