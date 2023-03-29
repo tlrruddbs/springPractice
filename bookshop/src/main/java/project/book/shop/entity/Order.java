@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -30,7 +31,7 @@ public class Order {
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderItem> orderItems; //ORDER, CANCEL
+    private List<OrderItem> orderItems = new ArrayList<>(); //ORDER, CANCEL
 
 
     //연관관계 메서드
