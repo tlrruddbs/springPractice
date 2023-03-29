@@ -1,6 +1,7 @@
 package project.book.shop.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +16,7 @@ public class Member {
     @Column(name = "member_id") @GeneratedValue
     private long id;
 
+    @NotNull
     private String userName;
     @Embedded
     private Address address;
