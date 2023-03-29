@@ -23,9 +23,6 @@ public class MemberService {
         return member.getId();
     }
     private void validateDuplicateMember(Member member) {
-
-        MakeReservationCommand a = new MakeReservationCommand();
-
         List<Member> findMembers = memberRepository.findByUserName(member.getUserName());
         if (!findMembers.isEmpty()) {
             throw new IllegalStateException("이미 존재하는 회원입니다.");
