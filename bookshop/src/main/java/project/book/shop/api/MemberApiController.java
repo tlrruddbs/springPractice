@@ -27,7 +27,7 @@ public class MemberApiController {
     @PostMapping("api/v2/members")
     public CreateMemberResponse saveMemberV2(@RequestBody @Valid CreateMemberRequest request){
         Member member = new Member();
-        member.setUserName(request.getUserName());
+        member.setName(request.getUserName());
 
         Long id = memberService.join(member);
         return new CreateMemberResponse(id);

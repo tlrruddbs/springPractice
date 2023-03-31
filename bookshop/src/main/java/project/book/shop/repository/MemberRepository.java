@@ -10,5 +10,5 @@ import java.util.List;
 public interface MemberRepository extends JpaRepository<Member, Long> {
     public List<Member> findAll();
 
-    public List<Member> findByUserName(String name);
+    public List<Member> findByName(String name);
 }

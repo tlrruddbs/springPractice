@@ -1,4 +1,4 @@
-package project.book.shop;
+package project.book.shop.init;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
@@ -20,9 +20,9 @@ public class InitDb {
 
     @PostConstruct
     public void init(){
-        System.out.println("postconstructer");
-//        initService.dbInit1();
-//        initService.dbInit2();
+//        System.out.println("postconstructer");
+        initService.dbInit1();
+        initService.dbInit2();
 
     }
 
@@ -35,8 +35,8 @@ public class InitDb {
         private final OrderRepository orderRepository;
 
         public void dbInit1(){
-            Member member = createMember("userA", "서울","1", "1111");
-            memberRepository.save(member);
+            Member createMember = createMember("userA", "서울","1", "1111");
+            memberRepository.save(createMember);
 
 
 
@@ -49,13 +49,18 @@ public class InitDb {
             OrderItem orderItem1 = OrderItem.createOrderItem(book1, 10000, 1);
             OrderItem orderItem2 = OrderItem.createOrderItem(book2, 20000, 2);
 
+            Member member = memberRepository.findById(createMember.getId()).get();
+
+            //배송정보 설정
             Delivery delivery = new Delivery();
             delivery.setAddress(member.getAddress());
             delivery.setStatus(DeliveryStatus.READY);
 
-            Order order = Order.createOrder(member, delivery, orderItem1, orderItem2);
-            orderRepository.save(order);
 
+            //주문 생성
+            Order order = Order.createOrder(member, delivery, orderItem1, orderItem2);
+
+            orderRepository.save(order);
         }
         public void dbInit2(){
             Member member = createMember("userB","진주", "2", "2222");
