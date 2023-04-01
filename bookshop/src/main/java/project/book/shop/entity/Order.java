@@ -22,9 +22,11 @@ public class Order {
     @JoinColumn(name = "member_id")
     private Member member;
 
+    @Column(name = "order_status")
     @Enumerated(EnumType.STRING)
-    private OrderStatus status;
+    private OrderStatus orderStatus;
 
+    @Column
     private LocalDateTime orderDate;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -58,8 +60,9 @@ public class Order {
         for(OrderItem orderItem : orderItems){
             order.addOrderItem(orderItem);
         }
-        order.setStatus(OrderStatus.ORDER);
+        order.setOrderStatus(OrderStatus.ORDER);
         order.setOrderDate(LocalDateTime.now());
+
 
         return order;
     }
@@ -70,7 +73,7 @@ public class Order {
             //이미 배송된 물품입니다.
             throw new IllegalStateException("이미 배송완료된 상품은 취소가 불가능합니다.");
         }
-        this.setStatus(OrderStatus.CANCEL);
+        this.setOrderStatus(OrderStatus.CANCEL);
         for(OrderItem orderItem : this.orderItems){
             orderItem.cancel();
         }

@@ -35,7 +35,7 @@ public class OrderServiceTest {
     @Test
     public void 상품주문() throws Exception{
         Member member = new Member();
-        member.setUserName("회원1");
+        member.setName("회원1");
         member.setAddress(new Address("서울","강가","12312"));
         memberRepository.save(member);
 
@@ -52,7 +52,7 @@ public class OrderServiceTest {
         Long orderId = orderService.order(member.getId(), book.getId(), orderCount);
         Order getOrder = orderRepository.findById(orderId).get();
 
-        assertEquals(OrderStatus.ORDER, getOrder.getStatus());
+        assertEquals(OrderStatus.ORDER, getOrder.getOrderStatus());
         assertEquals(1, getOrder.getOrderItems().size(), "주문한 상품 종류 수가 정확해야 한다.");
         assertEquals(10000 * orderCount, getOrder.getTotalPrice());
         assertEquals(book.getStockQuantity(), 8, "주문 수량만큼 재고가 줄어야한다.");
@@ -61,7 +61,7 @@ public class OrderServiceTest {
     @Test(expected = NotEnoughStockException.class)
     public void 상품주문_재고수량초과() throws Exception{
         Member member = new Member();
-        member.setUserName("회원1");
+        member.setName("회원1");
         member.setAddress(new Address("서울","강가","12312"));
         memberRepository.save(member);
 
@@ -72,10 +72,10 @@ public class OrderServiceTest {
         int orderCount = 11;
         itemRepository.save(book);
 
-        Book findBook = (Book) itemRepository.findById(book.getId()).get();
-        System.out.println(findBook.getId());
+//        Book findBook = (Book) itemRepository.findById(book.getId()).get();
+//        System.out.println(findBook.getId());
 
-        orderService.order(member.getId(), 1L, orderCount);
+        orderService.order(member.getId(), book.getId(), orderCount);
 
         org.junit.jupiter.api.Assertions.fail("실패해야한다.");
     }
@@ -85,7 +85,7 @@ public class OrderServiceTest {
     @Test
     public void 주문취소() throws Exception{
         Member member = new Member();
-        member.setUserName("회원1");
+        member.setName("회원1");
         member.setAddress(new Address("서울","강가","12312"));
         memberRepository.save(member);
 
@@ -103,7 +103,7 @@ public class OrderServiceTest {
 
         //then
         Order getOrder = orderRepository.findById(orderId).get();
-        assertEquals(getOrder.getStatus(), OrderStatus.CANCEL, "주문 취소시 상태는 cancel");
+        assertEquals(getOrder.getOrderStatus(), OrderStatus.CANCEL, "주문 취소시 상태는 cancel");
         assertEquals(book.getStockQuantity(), 10 ,"주문이 취소된 상품은 그만큼 재고가 충전되야한다.");
 
 

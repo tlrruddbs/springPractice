@@ -24,7 +24,7 @@ public class MemberRepositoryTest {
     @Rollback(value = true)
     public void memberTest(){
         Member member = new Member();//= new Member("A", new Address("서울", "거리", "13529"));
-        member.setUserName("memberA");
+        member.setName("memberA");
         long saveId = memberRepository.save(member).getId();
 
         Member findMember = memberRepository.findById(saveId).get();
