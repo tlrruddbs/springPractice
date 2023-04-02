@@ -21,9 +21,9 @@ spring:
           filters:
             - RewritePath=/user/?(?<segment>.*), /$\{segment}
 
-#        - id: team-service
-#          uri: lb://TEAM-SERVICE
-#          predicates:
-#            - Path=/team/**
-#          filters:
-#            - RewritePath=/team/?(?<segment>.*), /$\{segment}
+        - id: team-service
+          uri: lb://TEAM-SERVICE
+          predicates:
+            - Path=/team/**
+          filters:
+            - RewritePath=/team/?(?<segment>.*), /$\{segment}

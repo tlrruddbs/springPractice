@@ -1,4 +1,4 @@
-package com.example.userservice.domain.data;
+package com.example.teamservice.domain.dto;
 
 import lombok.Builder;
 import lombok.Data;
